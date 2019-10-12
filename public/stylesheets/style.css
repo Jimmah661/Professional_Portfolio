@@ -3,6 +3,27 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#container {
+  display: flex;
+  justify-content: center;
+}
+#navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#navSelection {
+  list-style: none;
+}
+#navSelection li {
+  color: blue;
+  padding: 5px 10px;
+  float: left;
+  border-bottom: 3px solid rgb(0, 0, 0);
+  border-bottom: 3px solid rgba(0, 0, 0, 0);
+  transition: 0.2s;
+}
+
+#navSelection li:hover {
+  border-bottom: 3px solid rgba(0, 0, 0, 1);
 }

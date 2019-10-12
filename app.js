@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var exphbs = require("express-handlebars");
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -9,7 +10,15 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+var PORT = process.env.PORT || 3000;
+
 // view engine setup
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main"
+  })
+);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'handlebars');
 
@@ -38,4 +47,10 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+app.listen(PORT, function() {
+  console.log(
+    "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
+    PORT,
+    PORT
+  );
+})
