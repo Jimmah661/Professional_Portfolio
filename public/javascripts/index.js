@@ -26,7 +26,6 @@ var quoteCycle = function() {
     }
   ];
   var choice = statements[Math.floor(Math.random() * statements.length)];
-  console.log(choice);
   $("#quote").text(choice.statement);
   $("#quoteAuthor").text("- " + choice.author);
   $("#quoteBox").css({ opacity: 1 });
